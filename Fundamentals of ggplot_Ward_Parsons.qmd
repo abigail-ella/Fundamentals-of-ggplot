@@ -1,0 +1,14 @@
+---
+title: "fundamentals of ggplot"
+author: "Ward, A; Parsons, R."
+format: 
+pdf : default
+gfm :default
+editor: visual
+---
+
+```{r}
+# install.packages("ggplot2")
+library(ggplot2)
+library(here)
+```
