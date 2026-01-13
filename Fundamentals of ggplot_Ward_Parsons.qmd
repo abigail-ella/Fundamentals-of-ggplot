@@ -11,4 +11,46 @@ editor: visual
 # install.packages("ggplot2")
 library(ggplot2)
 library(here)
+
+# Read in the data and store as "ci_np" data object
+ci_np <- read.csv("ci_np.csv")
+
+# display the first 6 rows
+head(ci_np)
+
+#look at column names
+colnames(ci_np)
+```
+
+Graphing Time YAY
+
+```{r}
+ggplot(data = ci_np)
+
+#try again w/ mapping
+ggplot(data = ci_np, mapping = aes(x = year, y = visitors)) 
+
+#Scatterplot
+ggplot(data = ci_np, mapping = aes(x = year, y = visitors)) +
+  geom_point()
+
+#Column graph
+ggplot(data = ci_np, mapping = aes(x = year, y = visitors)) +
+  geom_col()
+
+#Line plot
+ggplot(data = ci_np, mapping = aes(x = year, y = visitors)) +
+  geom_point() +
+  geom_line()
+
+#Smooth line
+ggplot(data = ci_np, mapping = aes(x = year, y = visitors)) +
+  geom_point() +
+  geom_smooth()
+
+#Linear model
+#Smooth line
+ggplot(data = ci_np, mapping = aes(x = year, y = visitors)) +
+  geom_point() +
+  geom_smooth(method = "lm")
 ```
