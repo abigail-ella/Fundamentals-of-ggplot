@@ -54,3 +54,33 @@ ggplot(data = ci_np, mapping = aes(x = year, y = visitors)) +
   geom_point() +
   geom_smooth(method = "lm")
 ```
+
+Single variables
+
+```{r}
+#Histogram
+ggplot(data = ci_np, mapping = aes(x = visitors)) +
+  geom_histogram()
+
+#Density Plot
+ggplot(data = ci_np, mapping = aes(x = visitors)) +
+  geom_density()
+```
+
+Modifying plot points
+
+```{r}
+#Color and shape
+ggplot(data = ci_np, mapping = aes(x = year, y = visitors)) +
+  geom_point(shape = 8, color = "blue")
+
+#Again!
+ggplot(data = ci_np, mapping = aes(x = year, y = visitors)) +
+  geom_point(shape = 3, color = "red")
+
+#Modifying line plot
+ggplot(data = ci_np, mapping = aes(x = year, y = visitors)) +
+  geom_point(color = "green") + #changed the dot color to be prettier
+  geom_line(linetype = "dashed", color = "green")
+
+```
