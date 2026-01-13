@@ -157,7 +157,11 @@ Our research question:
 How have landings for different species of abalone changed over time?
 
 ```{r}
-ggplot(ab_land, aes(x = Year, y = Abalone_Landings_lbs, color = Abalone_Species))+
+abalone_landings<-ggplot(ab_land, aes(x = Year, y = Abalone_Landings_lbs, color = Abalone_Species))+
   geom_point()+
   geom_line()
+
+abalone_landings
+
+ggsave("abalone_landings.jpeg", plot = abalone_landings)
 ```
