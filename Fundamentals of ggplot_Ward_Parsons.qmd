@@ -135,5 +135,30 @@ ggplot(data = ca_np, mapping = aes(x = year, y = visitors)) +
 #### Abalone Landings 
 
 ```{r}
+# Read in the data
+ab_land <- read.csv("abalone_landings.csv")
 
+# display the first 6 rows
+head(ab_land)
+
+#look at column names
+colnames(ab_land)
+```
+
+#### Data exploration notes: 
+
+-   "While" should be "white"
+
+-   Landings by year per species easy comparison
+
+-   Changes in landings over time
+
+Our research question:
+
+How have landings for different species of abalone changed over time?
+
+```{r}
+ggplot(ab_land, aes(x = Year, y = Abalone_Landings_lbs, color = Abalone_Species))+
+  geom_point()+
+  geom_line()
 ```
