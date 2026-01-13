@@ -22,7 +22,7 @@ head(ci_np)
 colnames(ci_np)
 ```
 
-Graphing Time YAY
+#### Graphing Time YAY
 
 ```{r}
 ggplot(data = ci_np)
@@ -55,7 +55,7 @@ ggplot(data = ci_np, mapping = aes(x = year, y = visitors)) +
   geom_smooth(method = "lm")
 ```
 
-Single variables
+#### Single variables
 
 ```{r}
 #Histogram
@@ -67,7 +67,7 @@ ggplot(data = ci_np, mapping = aes(x = visitors)) +
   geom_density()
 ```
 
-Modifying plot points
+#### Modifying plot points
 
 ```{r}
 #Color and shape
@@ -82,5 +82,58 @@ ggplot(data = ci_np, mapping = aes(x = year, y = visitors)) +
 ggplot(data = ci_np, mapping = aes(x = year, y = visitors)) +
   geom_point(color = "green") + #changed the dot color to be prettier
   geom_line(linetype = "dashed", color = "green")
+
+```
+
+#### Mapping other variables onto aesthetics 
+
+```{r}
+#Size of points vary w/ vistors
+ggplot(ci_np, aes(x = year, y = visitors)) +
+  geom_point(aes(size = visitors))
+
+#Changing color
+ggplot(ci_np, aes(x = year, y = visitors)) +
+  geom_point(aes(size = visitors,
+                 color = visitors))
+```
+
+#### All CA!
+
+```{r}
+#Read in data
+ca_np <- read.csv("ca_np.csv")
+
+
+# Fetch the column but with the output run through the unique() function
+unique(ca_np$park_name)
+```
+
+#### Plots of visitors
+
+```{r}
+#visitors per park per year
+ggplot(data = ca_np, mapping = aes(x = year, y = visitors)) +
+  geom_point()
+
+#color vary w/ park
+ggplot(data = ca_np, mapping = aes(x = year, y = visitors, color = park_name)) +
+  geom_point() +
+  geom_line()
+
+#Faceting parks
+ggplot(data = ca_np, mapping = aes(x = year, y = visitors)) +
+  geom_point(aes(color = park_name)) +
+  facet_wrap(park_name ~ .)
+
+#Free the scales 
+ggplot(data = ca_np, mapping = aes(x = year, y = visitors)) +
+  geom_point(aes(color = park_name)) +
+  facet_wrap(park_name ~ ., scales = "free_y")
+```
+
+#### Abalone Landings 
+
+```{r}
 
 ```
