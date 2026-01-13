@@ -2,8 +2,7 @@
 title: "fundamentals of ggplot"
 author: "Ward, A; Parsons, R."
 format: 
-pdf : default
-gfm :default
+  pdf: default
 editor: visual
 ---
 
@@ -85,7 +84,7 @@ ggplot(data = ci_np, mapping = aes(x = year, y = visitors)) +
 
 ```
 
-#### Mapping other variables onto aesthetics 
+#### Mapping other variables onto aesthetics
 
 ```{r}
 #Size of points vary w/ vistors
@@ -132,7 +131,7 @@ ggplot(data = ca_np, mapping = aes(x = year, y = visitors)) +
   facet_wrap(park_name ~ ., scales = "free_y")
 ```
 
-#### Abalone Landings 
+#### Abalone Landings
 
 ```{r}
 # Read in the data
@@ -145,7 +144,7 @@ head(ab_land)
 colnames(ab_land)
 ```
 
-#### Data exploration notes: 
+#### Data exploration notes:
 
 -   "While" should be "white"
 
