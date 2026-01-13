@@ -3,7 +3,7 @@ title: "fundamentals of ggplot"
 author: "Ward, A; Parsons, R."
 format: 
   pdf: default
-editor: visual
+editor: visual                                                                                                                                                               
 ---
 
 ```{r}
